@@ -1,11 +1,11 @@
-import '@/styles'
+import "@/styles"
 
 import { Content } from "@/layouts/Content"
 import { Footer } from "@/layouts/Footer"
 import { Header } from "@/layouts/Header"
 import { Head } from "minista"
 
-export default function ({ children, title }) {
+export default function ({ children, title, url }) {
   return (
     <>
       <Head htmlAttributes={{ lang: "en" }}>
@@ -30,7 +30,7 @@ export default function ({ children, title }) {
         />
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
-      <Header />
+      <Header url={url} />
       <Content>{children}</Content>
       <Footer />
     </>

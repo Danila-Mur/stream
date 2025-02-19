@@ -1,6 +1,3 @@
-@use "./helpers/mixins" as *;
-@use "./helpers/media" as *;
-
 html {
   &.is-lock {
     overflow: hidden;

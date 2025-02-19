@@ -36,7 +36,7 @@ export default defineConfig({
       outDir: "assets/images",
       outName: "[dirname]",
       svgstoreOptions: {
-        cleanSymbols: ["fill", "stroke", "stroke-linejoin", "stroke-width"],
+        cleanSymbols: ["fill", "stroke"],
       },
     },
     fonts: {
@@ -78,7 +78,12 @@ export default defineConfig({
       localsConvention: "camelCaseOnly",
     },
     preprocessorOptions: {
-      scss: {},
+      scss: {
+        additionalData: `
+          @use '@/styles/helpers' as *;
+        `,
+        silenceDeprecations: ["legacy-js-api"],
+      },
       less: {},
       stylus: {},
     },

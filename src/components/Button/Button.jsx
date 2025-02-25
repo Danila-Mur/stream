@@ -6,7 +6,7 @@ export const Button = ({
   type = "button",
   href,
   target,
-  // '' - default | 'trasnsparent' | 'black-10'
+  // '' - default | 'trasnsparent' | 'black-08' | 'black-10'
   mode = "",
   label,
   isLabelHidden = false,
@@ -14,6 +14,7 @@ export const Button = ({
   // 'before' | 'after'
   iconPosition = "before",
   hasFillIcon,
+  extraAttrs,
 }) => {
   const isLink = href !== undefined
   const Component = isLink ? "a" : "button"
@@ -33,6 +34,7 @@ export const Button = ({
       title={title}
       aria-label={title}
       {...specificProps}
+      {...extraAttrs}
     >
       {iconPosition === "before" && iconComponent}
       {!isLabelHidden && <span className="button__label">{label}</span>}

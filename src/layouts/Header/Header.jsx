@@ -4,7 +4,7 @@ import { Logo } from "@/components/Logo"
 import classNames from "classnames"
 import "./Header.scss"
 
-export const Header = ({ url }) => {
+export const Header = ({ url, isFixed }) => {
   const menuItems = [
     { label: "Home", href: "/" },
     { label: "Movies & Shows", href: "/movies" },
@@ -13,7 +13,12 @@ export const Header = ({ url }) => {
   ]
 
   return (
-    <header className="header" data-js-overlay-menu="">
+    <header
+      className={classNames("header", {
+        "is-fixed": isFixed,
+      })}
+      data-js-overlay-menu=""
+    >
       <div className="header__inner container">
         <Logo className="header__logo" loading="eager" />
         <dialog

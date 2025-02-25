@@ -1,11 +1,22 @@
+import { Categories } from "@/sections/Categories"
+import { Devices } from "@/sections/Devices"
+import { Hero } from "@/sections/Hero"
+import { Plans } from "@/sections/Plans"
+import { Questions } from "@/sections/Questions"
+
 export const metadata = {
   title: "Home",
+  isHeaderFixed: true,
 }
 
 export default function () {
   return (
     <>
-      <h1>Main</h1>
+      <Hero />
+      <Categories />
+      <Devices />
+      <Questions />
+      <Plans />
     </>
   )
 }

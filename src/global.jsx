@@ -4,8 +4,9 @@ import { Content } from "@/layouts/Content"
 import { Footer } from "@/layouts/Footer"
 import { Header } from "@/layouts/Header"
 import { Head } from "minista"
+import { Banner } from "./sections/Banner"
 
-export default function ({ children, title, url }) {
+export default function ({ children, title, url, isHeaderFixed }) {
   return (
     <>
       <Head htmlAttributes={{ lang: "en" }}>
@@ -30,8 +31,11 @@ export default function ({ children, title, url }) {
         />
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
-      <Header url={url} />
-      <Content>{children}</Content>
+      <Header url={url} isFixed={isHeaderFixed} />
+      <Content isResetPaddingTop={isHeaderFixed}>
+        {children}
+        <Banner />
+      </Content>
       <Footer />
     </>
   )

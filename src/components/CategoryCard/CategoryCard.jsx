@@ -1,8 +1,9 @@
+import { Badge } from "@/components/Badge"
 import { Icon } from "@/components/Icon"
 import { Image } from "minista"
 import "./CategoryCard.scss"
 
-export const CategoryCard = ({ title, images = [] }) => {
+export const CategoryCard = ({ title, images = [], badge }) => {
   return (
     <a className="category-card" href="/movies">
       <div className="category-card__images">
@@ -11,7 +12,14 @@ export const CategoryCard = ({ title, images = [] }) => {
         ))}
       </div>
       <div className="category-card__body">
-        <h3 className="category-card__title">{title}</h3>
+        <h3 className="category-card__title">
+          {badge && (
+            <Badge className="category-card__badge" mode="accent" isBig>
+              {badge}
+            </Badge>
+          )}
+          <span>{title}</span>
+        </h3>
         <Icon className="category-card__icon" name="arrow-right" />
       </div>
     </a>

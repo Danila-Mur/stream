@@ -8,11 +8,16 @@ export const SliderNavigation = ({
   hasPagination = true,
   // '' - default | 'tile'
   mode = "",
+  // '' - default | 'abs-bottom' - absolute bottom |
+  position = "",
+  isHiddenMobile,
 }) => {
   return (
     <div
       className={classNames(className, "slider-navigation", {
         [`slider-navigation--${mode}`]: mode,
+        [`slider-navigation--${position}`]: position,
+        "hidden-mobile": isHiddenMobile,
       })}
       id={id}
       data-js-slider-navigation=""

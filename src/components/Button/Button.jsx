@@ -4,9 +4,10 @@ import "./Button.scss"
 
 export const Button = ({
   type = "button",
+  className,
   href,
   target,
-  // '' - default | 'trasnsparent' | 'black-08' | 'black-10'
+  // '' - default | 'trasnsparent' | 'black-06'| 'black-08' | 'black-10'
   mode = "",
   label,
   isLabelHidden = false,
@@ -28,7 +29,7 @@ export const Button = ({
 
   return (
     <Component
-      className={classNames(classNames, "button", {
+      className={classNames(className, "button", {
         [`button--${mode}`]: mode,
       })}
       title={title}

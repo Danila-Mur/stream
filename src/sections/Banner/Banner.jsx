@@ -1,12 +1,11 @@
 import { Button } from "@/components/Button"
-import { Section } from "@/layouts/Section"
 import "./Banner.scss"
 
 export const Banner = () => {
   const titleId = "banner-title"
 
   return (
-    <Section className="banner container" aria-labelledby={titleId}>
+    <section className="banner container" aria-labelledby={titleId}>
       <div className="banner__inner">
         <div className="banner__body">
           <h2 className="banner__title" id={titleId}>
@@ -25,6 +24,6 @@ export const Banner = () => {
           href="/subscriptions"
         />
       </div>
-    </Section>
+    </section>
   )
 }

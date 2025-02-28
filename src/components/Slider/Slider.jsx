@@ -42,6 +42,7 @@ export const Slider = ({
   hasScrollbarOnMobile = true,
   // '' - default | 'abs-bottom' - absolute bottom |
   navigationPosition = "",
+  navigationMode,
   isNavigationHiddenMobile = true,
 }) => {
   return (
@@ -67,6 +68,7 @@ export const Slider = ({
       {!navigationTargetElementId && (
         <SliderNavigation
           className="slider__navigation"
+          mode={navigationMode}
           position={navigationPosition}
           isHiddenMobile={isNavigationHiddenMobile}
         />

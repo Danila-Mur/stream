@@ -2,6 +2,9 @@ import classNames from "classnames"
 import "./AccordionGroup.scss"
 
 export const AccordionGroup = ({
+  className,
+  // '' - default | 'dark'
+  mode = "",
   columns = 1,
   children,
   isOrderedList = true,
@@ -11,9 +14,10 @@ export const AccordionGroup = ({
 
   return (
     <ListTag
-      className={classNames("accordion-group", {
+      className={classNames(className, "accordion-group", {
         [`accordion-group--${columns}-columns`]: columns > 1,
         "accordion-group--has-counter": isOrderedList,
+        [`accordion-group--${mode}`]: mode,
       })}
     >
       {children.map((child, index) => (

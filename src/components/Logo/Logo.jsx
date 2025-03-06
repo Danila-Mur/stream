@@ -12,7 +12,7 @@ export const Logo = ({ className, loading = "lazy" }) => {
       aria-label={title}
     >
       <img
-        src="/public/logo.svg"
+        src="/logo.svg"
         alt=""
         className="logo__image"
         width={199}

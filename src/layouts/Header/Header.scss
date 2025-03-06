@@ -53,15 +53,19 @@
     }
 
     &[open] {
-      display: flex;
+      @include tablet {
+        display: flex;
 
-      @starting-style {
-        @include starting-style;
+        @starting-style {
+          @include starting-style;
+        }
       }
     }
 
     &:not([open]) {
-      @include starting-style;
+      @include tablet {
+        @include starting-style;
+      }
     }
   }
 

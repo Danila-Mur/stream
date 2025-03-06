@@ -1,3 +1,4 @@
+import postcssPresetEnv from "postcss-preset-env"
 import poscssPxToRem from "postcss-pxtorem"
 
 export default ({ env }) => {
@@ -9,8 +10,10 @@ export default ({ env }) => {
       poscssPxToRem({
         propList: ["*"],
         mediaQuery: true,
-      })
+      }),
     )
+
+    plugins.push(postcssPresetEnv())
   }
 
   return {
